@@ -25,6 +25,8 @@ public class Book {
             output =  getTitle()+", "+getPagesCount()+" pages, "+getYearPublished();
         } else if (s.equalsIgnoreCase("name")){
             output = getTitle();
+        } else {
+            return "You did not enter 'Everything' or 'Name'.";
         }
         return output;
     }

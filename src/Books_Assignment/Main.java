@@ -29,6 +29,5 @@ public class Main {
         for (Book book : booksList) {
             System.out.println(book.toString(dataScope));
         }
-
     }
 }
