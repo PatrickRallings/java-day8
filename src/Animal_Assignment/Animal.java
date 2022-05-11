@@ -1,3 +1,5 @@
+package Animal_Assignment;
+
 public class Animal {
     public String name;
     public boolean isDog;

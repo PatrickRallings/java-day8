@@ -1,3 +1,5 @@
+package Animal_Assignment;
+
 import java.util.ArrayList;
 import java.util.Scanner;
 
