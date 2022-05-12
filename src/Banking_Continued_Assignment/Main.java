@@ -11,7 +11,7 @@ public class Main {
     static Integer transferTarget;
     static String output = null;
     static boolean noExit = true;
-
+    static String response;
     static double amount;
     static DecimalFormat f = new DecimalFormat("#0.00");
 
@@ -47,7 +47,8 @@ public class Main {
 
     public static void mainMenu() {
         System.out.println("Account ID #" + currentAccount + "\nHello " + accounts.get(currentAccount).getName() + "! Welcome to the main menu. Which of the following would you like to do?\n1. Check Balance\n2. Withdraw\n3. Deposit\n4. Transfer\n5. Exit");
-        switch (scan.nextLine().toLowerCase()) {
+        response = scan.nextLine();
+        switch (response.toLowerCase()) {
             case "1":
             case "check balance":
                 output = "Your balance is: " + f.format(accounts.get(currentAccount).getBalance());
