@@ -32,7 +32,7 @@ public class Main {
         String answer = scan.nextLine();
         if (answer.equalsIgnoreCase("Yes")) {
             System.out.println("Thank you for being a customer, what is your account number?");
-            currentAccount = scan.nextInt();
+            currentAccount = Integer.valueOf(scan.nextLine());
         } else if (answer.equalsIgnoreCase("No")) {
             System.out.println("The let's make a new account!");
             accounts.add(new BankAccount());
