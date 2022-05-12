@@ -23,6 +23,11 @@ public class Main {
             System.out.println("Enter year published:");
             yearPublished = Integer.valueOf(scan.nextLine());
             booksList.add(new Book(title, pagesCount, yearPublished));
+            booksList.add(new Book("onlyTitle"));
+            booksList.add(new Book("titleAndYear", 1));
+            booksList.add(new Book(100));
+            booksList.add(new Book(100, 1994));
+            booksList.add(new Book());
         }
         System.out.println("Would you like to view all of your information, or just the names of your book(s)?\nEverything | Name");
         dataScope = scan.nextLine();

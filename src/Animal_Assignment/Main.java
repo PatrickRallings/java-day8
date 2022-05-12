@@ -22,6 +22,9 @@ public class Main {
                 break;
             }
             animals.add(new Animal(currentName, toBoolean(currentIsDog)));
+            animals.add(new Animal("justName"));
+            animals.add(new Animal(true));
+            animals.add(new Animal());
         }
         if (animals.size() > 0) {
             output(animals);

@@ -10,6 +10,22 @@ public class Book {
         this.pagesCount = pagesCount;
         this.yearPublished = yearPublished;
     }
+    public Book(String title) {
+        this.title = title;
+    }
+    public Book(Integer pagesCount) {
+        this.pagesCount = pagesCount;
+    }
+    public Book(String title, Integer yearPublished) {
+        this.title = title;
+        this.yearPublished = yearPublished;
+    }
+    public Book(Integer pagesCount, Integer yearPublished) {
+        this.pagesCount = pagesCount;
+        this.yearPublished = yearPublished;
+    }
+    public Book() {
+    }
     public String getTitle(){
         return this.title;
     }

@@ -11,6 +11,12 @@ public class Main {
     public static Scanner scan = new Scanner(System.in);
 
     public static void main(String[] args) {
+        showsList.add(new TVShow("name", 1, "genre"));
+        showsList.add(new TVShow("name", 500));
+        showsList.add(new TVShow("name", "genre"));
+        showsList.add(new TVShow("name"));
+        showsList.add(new TVShow(1));
+        showsList.add(new TVShow());
         while (true) {
             System.out.println("Name of the show: ");
             currentName = scan.nextLine();

@@ -19,11 +19,11 @@ public class Main {
         accounts.add(new BankAccount("Patrick", 1.00, 0));
         accounts.add(new BankAccount("Matt", 1000000.00, 1));
         introduction();
-//        while (noExit) {
-            mainMenu();
+        while (noExit) {
+            mainMenu(accounts.get(currentAccount));
             if (output != null) {
                 System.out.println(accounts.get(currentAccount).toString(output));
-//            }
+            }
         }
     }
 
@@ -45,28 +45,28 @@ public class Main {
         System.out.println("Thank you for your business!");
     }
 
-    public static void mainMenu() {
-        System.out.println("Account ID #" + currentAccount + "\nHello " + accounts.get(currentAccount).getName() + "! Welcome to the main menu. Which of the following would you like to do?\n1. Check Balance\n2. Withdraw\n3. Deposit\n4. Transfer\n5. Exit");
+    public static void mainMenu(BankAccount obj) {
+        System.out.println("Hello " + obj.getName() + "! Welcome to the main menu. Which of the following would you like to do?\n1. Check Balance\n2. Withdraw\n3. Deposit\n4. Transfer\n5. Exit");
         response = scan.nextLine();
         switch (response.toLowerCase()) {
             case "1":
             case "check balance":
-                output = "Your balance is: " + f.format(accounts.get(currentAccount).getBalance());
+                output = "Your balance is: " + f.format(obj.getBalance());
                 break;
             case "2":
             case "withdraw":
                 System.out.println("How much would you like to withdraw?");
                 amount = scan.nextDouble();
-                accounts.get(currentAccount).setBalanceWithdrawal(amount);
-                System.out.println(accounts.get(currentAccount).getBalance());
-                output = "You have withdrawn $" + f.format(amount) + " and have a new balance of $" + f.format(accounts.get(currentAccount).getBalance());
+                obj.setBalanceWithdrawal(amount);
+                System.out.println(obj.getBalance());
+                output = "You have withdrawn $" + f.format(amount) + " and have a new balance of $" + f.format(obj.getBalance());
                 break;
             case "3":
             case "deposit":
                 System.out.println("How much would you like to deposit?");
                 amount = scan.nextDouble();
-                accounts.get(currentAccount).setBalanceDeposit(amount);
-                output = "You have deposited $" + f.format(amount) + " and have a new balance of $" + f.format(accounts.get(currentAccount).getBalance());
+                obj.setBalanceDeposit(amount);
+                output = "You have deposited $" + f.format(amount) + " and have a new balance of $" + f.format(obj.getBalance());
                 break;
             case "4":
             case "transfer":
@@ -76,10 +76,10 @@ public class Main {
                     System.out.println("How much would you like to transfer?");
                     amount = scan.nextDouble();
                     transfer(accounts.get(transferTarget), amount);
-                    output = "You have successfully transferred $" + f.format(amount) + " to " + accounts.get(transferTarget).getName() + ".\nYour new balance is: $" + f.format(accounts.get(currentAccount).getBalance());
+                    output = "You have successfully transferred $" + f.format(amount) + " to " + accounts.get(transferTarget).getName() + ".\nYour new balance is: $" + f.format(obj.getBalance());
                 } else {
                     System.out.println("That account does not exist. Please try again.");
-                    mainMenu();
+                    mainMenu(accounts.get(currentAccount));
                 }
                 break;
             case "5":
