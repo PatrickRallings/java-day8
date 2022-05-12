@@ -5,8 +5,8 @@ public class Counter {
     public Counter(double initialNum){
         this.num = initialNum;
     }
-    public Integer value(){
-        return (int) this.num;
+    public Double value(){
+        return this.num;
     }
     public void increase(){
         this.num++;
