@@ -21,6 +21,9 @@ public class BankAccount {
     public void setBalanceDeposit(double num) {
         this.balance += num;
     }
+    public void setAccountNumber(Integer accountNumber) {
+        this.accountNumber = accountNumber;
+    }
     public void setBalanceWithdrawal(double num) {
         this.balance -= num;
     }
