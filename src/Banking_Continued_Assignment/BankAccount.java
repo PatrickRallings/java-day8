@@ -27,7 +27,10 @@ public class BankAccount {
     public double getBalance(){
         return this.balance;
     }
+    public String getName(){
+        return this.name;
+    }
     public String toString(String response) {
-        return "";
+        return response;
     }
 }
